@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/api')
 def get_info():
     # Get the value of the 'slack_name' parameter from the request URL
-    slack_name = request.args.get('Damien Ayine')
+    slack_name = request.args.get('Damien_Ayine')
     
     # Get the value of the 'track' parameter from the request URL
     track = request.args.get('backend')
@@ -24,10 +24,14 @@ def get_info():
         'current_day': current_day,
         'utc_time': utc_time,
         'track': track,
-        'github_file_url': 'https://github.com/username/repo/blob/main/file_name.ext',
+        'github_file_url': 'https://github.com/Damiennsoh/Backend-Internships/blob/main/endpoint_task/endpoint.py',
         'github_repo_url': 'https://github.com/Damiennsoh/Backend-Internships',
         'status_code': 'success'
     }
 
     # Return the information as JSON response
     return jsonify(info)
+if __name__ == '__main__':
+    app.run()
+
+
