@@ -1,6 +1,6 @@
 # Importing necessary dependencies/libraries
 from flask import Flask, jsonify, request
-from datetime import datetime, timedelta
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -10,19 +10,11 @@ def get_info():
     slack_name = request.args.get('slack_name', default='Damien_Ayine')
     track = request.args.get('track', default='backend')
 
-    # Get the current UTC time
-    current_time_utc = datetime.utcnow()
-
-    # Add a timedelta of -2 seconds to the current UTC time
-    lower_bound = current_time_utc - timedelta(seconds=2)
-
-    # Add a timedelta of +2 seconds to the current UTC time
-    upper_bound = current_time_utc + timedelta(seconds=2)
-
-    # Format the current UTC time and bounds as strings
-    current_time_str = current_time_utc.strftime('%Y-%m-%d %H:%M:%S')
-    lower_bound_str = lower_bound.strftime('%Y-%m-%d %H:%M:%S')
-    upper_bound_str = upper_bound.strftime('%Y-%m-%d %H:%M:%S')
+    # Get the current day and time
+    current_day = datetime.now().strftime('%A')
+    
+    # Get the current UTC time in the desired format
+    current_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # Define the URLs for the GitHub file and repository
     github_file_url = 'https://github.com/Damiennsoh/Backend-Internships/blob/main/endpoint_task/endpoint.py'
@@ -31,9 +23,8 @@ def get_info():
     # Create a response dictionary with the retrieved values and URLs
     response = {
         'slack_name': slack_name,
-        'current_time_utc': current_time_str,
-        'lower_bound_utc': lower_bound_str,
-        'upper_bound_utc': upper_bound_str,
+        'current_day': current_day,
+        'utc_time': current_time,
         'track': track,
         'github_file_url': github_file_url,
         'github_repo_url': github_repo_url,
