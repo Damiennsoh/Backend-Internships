@@ -12,7 +12,7 @@ def get_info():
 
     # Get the current day and time
     current_day = datetime.now().strftime('%A')
-    current_time = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+    current_time = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S') + ' UTC'
 
     # Define the URLs for the GitHub file and repository
     github_file_url = 'https://github.com/Damiennsoh/Backend-Internships/blob/main/endpoint_task/endpoint.py'
