@@ -1,6 +1,7 @@
 # Importing necessary dependencies/libraries
 from flask import Flask, jsonify, request
 from datetime import datetime
+from collections import OrderedDict
 
 app = Flask(__name__)
 
@@ -20,16 +21,15 @@ def get_info():
     github_file_url = 'https://github.com/Damiennsoh/Backend-Internships/blob/main/endpoint_task/endpoint.py'
     github_repo_url = 'https://github.com/Damiennsoh/Backend-Internships'
 
-    # Create a response dictionary with the retrieved values and URLs
-    response = {
-        'slack_name': slack_name,
-        'current_day': current_day,
-        'utc_time': current_time,
-        'track': track,
-        'github_file_url': github_file_url,
-        'github_repo_url': github_repo_url,
-        'status_code': 200
-    }
+    # Create an ordered dictionary to maintain the order of the keys
+    response = OrderedDict()
+    response['slack_name'] = slack_name
+    response['current_day'] = current_day
+    response['utc_time'] = current_time
+    response['track'] = track
+    response['github_file_url'] = github_file_url
+    response['github_repo_url'] = github_repo_url
+    response['status_code'] = 200
 
     # Return the response as JSON with a status code of 200
     return jsonify(response), 200
