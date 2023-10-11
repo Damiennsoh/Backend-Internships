@@ -12,10 +12,13 @@ questions = [
     },
     {"question":"Which keyword is used to define a function in Python?",
      "choices": ["A: def", "B: function", "C: define", "D: func"],
+    #  the correct answer
+    "answer": "A"
     },
     {
     "question": "What is the result of the following code?\n\nx = 5\ny = 2\nprint(x // y)",
     "choices": ["A. 2", "B. 2.5", "C. 2.0", "D. 2.2"],
+    # the correct answer
     "answer": "A"
     },
 
