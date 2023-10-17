@@ -81,7 +81,7 @@ while True:
                 user_details = eval(line)
                 # print(user_details)
                 user_count += 1
-        print("Total number of users:", user_count)
+        print("\nTotal number of users:", user_count)
         print()
 
     if menu == 'r':
