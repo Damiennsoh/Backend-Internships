@@ -82,6 +82,7 @@ while True:
                 # print(user_details)
                 user_count += 1
         print("Total number of users:", user_count)
+        print()
 
     if menu == 'r':
         new_user()
