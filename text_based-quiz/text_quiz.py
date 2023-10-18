@@ -22,7 +22,7 @@ questions = [
     "answer": "A"
     },
     {"question": "What is the output of the following code?\nx = 10\ny = 3\nprint(x % y)",
-     "choices": ["A. 1", "B. 2", "C. 3" "D. 4"],
+     "choices": ["A. 1", "B. 2", "C. 3", "D. 4"],
      "answer": "A"   
     }
 

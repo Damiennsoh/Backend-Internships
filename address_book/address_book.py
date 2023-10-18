@@ -17,7 +17,7 @@ while True:
         - Age.'''
         user_name = input("What is the user's name? : ")
         user_contact = input("What is the user's contact number?: ")
-        user_email = input("What is the user's email number?: ")
+        user_email = input("What is the user's email?: ")
         user_age = input("What is the user's age?: ")
 
         newuser_details = {
