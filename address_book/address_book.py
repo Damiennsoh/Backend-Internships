@@ -1,3 +1,4 @@
+# Creating a menu of choices
 while True:
     menu = input('''Select one of the following options below:
     r - Register a new user
